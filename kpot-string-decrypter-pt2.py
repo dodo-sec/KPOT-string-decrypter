@@ -2,12 +2,6 @@ import ida_bytes
 import idautils
 import idc
 
-x = 0
-eax_offset = 0
-entry = 0
-offset = 0
-str_entry = 0
-
 def search_offset(x):
     #get offset of string table that's moved into eax
     if idc.print_insn_mnem(prev_head(x)) == 'mov' and idc.print_operand(prev_head(x), 0) == 'eax':
